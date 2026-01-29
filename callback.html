@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>OAuth Callback</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        const params = window.location.search;
+        if (window.opener) {
+          window.opener.postMessage(
+            "authorization:github:success:" + params,
+            window.location.origin
+          );
+        }
+        window.close();
+      })();
+    </script>
+  </body>
+</html>
