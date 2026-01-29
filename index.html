@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <body>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const provider = params.get("provider");
+      const site_id = params.get("site_id");
+      const scope = params.get("scope");
+
+      const redirect = `https://github.com/login/oauth/authorize?client_id=YOUR_CLIENT_ID&scope=${scope}&state=${site_id}`;
+      window.location.href = redirect;
+    </script>
+  </body>
+</html>
